@@ -1,14 +1,16 @@
 {
     "name": "kirillsimin/semaphore",
     "description": "Versioned routes for Laravel API resources",
-    "require": {
-        "laravel/laravel": "^5.5"
-    },
     "license": "MIT",
     "authors": [
         {
             "name": "Kirill Simin",
             "email": "kirillsimin+semaphore@pm.me"
         }
-    ]
+    ],
+    "extra": {
+        "laravel": {
+            "providers": ["kirillsimin\\semaphore\\SemaphoreServiceProvider"]
+        }
+    }
 }
