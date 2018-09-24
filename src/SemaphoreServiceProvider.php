@@ -25,6 +25,8 @@ class SemaphoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('kirillsimin\semaphore\VersionedRoute');
+        $this->app->bind('kirillsimin\semaphore\VersionedRoute', function ($app) {
+            return new VersionedRoute();
+        });
     }
 }
