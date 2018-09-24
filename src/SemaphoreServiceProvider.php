@@ -13,7 +13,9 @@ class SemaphoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // $this->app['bleh'] = $this->app->publishes(function($app) {
+        //     return new VersionedRoute;
+        // });
     }
 
     /**
@@ -23,6 +25,6 @@ class SemaphoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->make('kirillsimin\semaphore\VersionedRoute');
     }
 }
