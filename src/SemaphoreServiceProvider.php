@@ -2,6 +2,7 @@
 
 namespace Kirillsimin\Semaphore;
 
+
 use Illuminate\Support\ServiceProvider;
 
 class SemaphoreServiceProvider extends ServiceProvider
