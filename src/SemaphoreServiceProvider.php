@@ -23,8 +23,6 @@ class SemaphoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Kirillsimin\Semaphore\VersionedRoute', function ($app) {
-            return new VersionedRoute();
-        });
+        $this->app->bind('Kirillsimin\Semaphore\VersionedRoute');
     }
 }
