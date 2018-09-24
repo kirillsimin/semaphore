@@ -36,6 +36,11 @@ Copy the package config to your local config with the publish command:
 - Call the class `PhotosController_v1` and make sure it `extends PhotosController_v0`
 - Overwrite any methods you wish to update. All other methods will be called from the previous version.
 
-3. Make the call to the correct controller:
+3. Update your routes file.
+
+- In your routes/api.php, either include the package at the top (`use KirillSimin\Semaphore\VersionedRoute`), or use an alias in your `app.php`
+- Replace `Route::apiResource('photos', 'PhotosController');` with `VersionedRoute::apiResource('photos', 'PhotosController')`
+
+4. Make the call to the correct controller:
 
 - The route accepts a custom `controller-version` header. If you do not pass it, it will default to `_v0`. If you pass a number, it will attempt to locate the correct version of the controller.
