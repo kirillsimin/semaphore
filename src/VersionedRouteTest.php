@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
+use \Tests\TestCase;
 use VersionedRoute;
 
 class VersionedRouteTest extends TestCase
@@ -10,15 +10,15 @@ class VersionedRouteTest extends TestCase
     /** @test */
     public function can_get_action_from_post()
     {
-        $route = VersionedRoute::post('videos', 'Api\VideoController@index');
-        $this->assertEquals('Api\VideoController\VideoController_v0@index', $route->getAction('controller'));
+        $route = VersionedRoute::post('Examples', 'Api\ExampleController@index');
+        $this->assertEquals('Api\ExampleController\ExampleController_v0@index', $route->getAction('controller'));
     }
 
     /** @test */
     public function can_get_action_from_get()
     {
-        $route = VersionedRoute::get('videos', 'Api\VideoController@index');
-        $this->assertEquals('Api\VideoController\VideoController_v0@index', $route->getAction('controller'));
+        $route = VersionedRoute::get('Examples', 'Api\ExampleController@index');
+        $this->assertEquals('Api\ExampleController\ExampleController_v0@index', $route->getAction('controller'));
     }
 
     /** @test */
@@ -27,9 +27,9 @@ class VersionedRouteTest extends TestCase
         $returnValue = '__the-right-return-value__';
 
         $mock = VersionedRoute::fake();
-        $mock->shouldReceive('apiResource')->with('videos', 'Api\VideoController\VideoController_v0')->andReturn($returnValue);
+        $mock->shouldReceive('apiResource')->with('Examples', 'Api\ExampleController\ExampleController_v0')->andReturn($returnValue);
 
-        $resource = VersionedRoute::apiResource('videos', 'Api\VideoController');
+        $resource = VersionedRoute::apiResource('Examples', 'Api\ExampleController');
         $this->assertEquals($resource, $returnValue);
 
         VersionedRoute::restoreFake();
@@ -45,7 +45,7 @@ class VersionedRouteTest extends TestCase
         $mock = VersionedRoute::fake();
         $mock
             ->shouldReceive('apiResource')
-            ->with('videos', 'Api\VideoController\VideoController_v0')
+            ->with('Examples', 'Api\ExampleController\ExampleController_v0')
             ->andReturn($resourceMock);
 
         $resourceMock
@@ -53,7 +53,7 @@ class VersionedRouteTest extends TestCase
             ->with('index')
             ->andReturn($returnValue);
 
-        $resource = VersionedRoute::apiResource('videos', 'Api\VideoController')->only('index');
+        $resource = VersionedRoute::apiResource('Examples', 'Api\ExampleController')->only('index');
         $this->assertEquals($resource, $returnValue);
 
         VersionedRoute::restoreFake();
