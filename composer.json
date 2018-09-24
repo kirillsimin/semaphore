@@ -10,7 +10,7 @@
     ],
     "extra": {
         "laravel": {
-            "providers": ["Kirillsimin\\Semaphore\\Src\\SemaphoreServiceProvider"]
+            "providers": ["Kirillsimin\\Semaphore\\SemaphoreServiceProvider"]
         }
     }
 }

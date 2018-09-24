@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirillsimin\Semaphore\Src;
+namespace Kirillsimin\Semaphore;
 
 use Illuminate\Support\ServiceProvider;
 
