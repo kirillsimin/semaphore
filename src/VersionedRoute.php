@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Semaphore;
+namespace Kirillsimin\Semaphore\Src;
 
 class VersionedRoute
 {
